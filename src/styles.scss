@@ -15,10 +15,18 @@ body {
     width: 100px;
     margin: 0 auto;
     text-align: center;
+    transition: 600ms;
+    &:hover {
+      cursor: pointer;
+    }
 
     li {
-      color: #EBDA99;
+      color: #E2B848;
       padding: 5px 0;
     }
   }
+}
+
+.color-border {
+  border-color: #79D5EA;
 }
