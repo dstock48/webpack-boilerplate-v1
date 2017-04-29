@@ -1,0 +1,20 @@
+{
+    "extends": "airbnb-base",
+    "plugins": [
+        "import"
+    ],
+    "env": {
+      "browser": true,
+      "jquery": true
+    },
+    "rules": {
+      "no-console": 0,
+      "space-before-function-paren": 0,
+      "max-len": 0,
+      "no-plusplus": [1, { "allowForLoopAfterthoughts": true }],
+      "prefer-template": 1,
+      "no-multiple-empty-lines": [1, { "max": 10, "maxBOF": 100}],
+      "eol-last": 1,
+      "no-use-before-define": [2, { "functions": false}]
+    }
+}
