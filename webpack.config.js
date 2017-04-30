@@ -30,8 +30,19 @@ module.exports = {
         test: /\.scss$/, // tests to only take effect on files ending in ".js"
         // loader: 'style-loader!css-loader!sass-loader', // the loader to be used on all files matching the test
         use: ExtractTextPlugin.extract({
-          fallback: 'style-loader',
-          use: 'css-loader!sass-loader',
+          use: [
+            {
+              loader: 'css-loader',
+              options: {
+                sourceMap: true, // tells webpack to include a sourcemap file that maps the compiled CSS back to the original SCSS
+              },
+            },
+            {
+              loader: 'sass-loader',
+              options: {
+                sourceMap: true, // tells webpack to include a sourcemap file that maps the compiled CSS back to the original SCSS
+              },
+            }],
         }),
         include: path.join(__dirname, 'src'), // specify exactly which directory to include in the loader's scope
       },
