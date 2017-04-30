@@ -1,10 +1,17 @@
+// imports methods from the the 'path' npm package (babel dependancy)
 const path = require('path');
+
+// import library that generates an index.html file in the build folder based on a template file,
+// automatically adds a <script> tag with the transpiled JS file as its src
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+
+// import a library that generates a .css file with the transpiled SASS code
+// and adds it to the build folder, also adds a <link> tag into the index.html file
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 
 module.exports = {
   context: path.join(__dirname, 'src'), // specify the 'root' directory for all other relative paths used below
-  devtool: 'source-map',
+  devtool: 'source-map', // creates a source-map file so that in the browser inspector it will show the actual line numbers of the dev files
   entry: { // specify the files being accepted by webpack
     app: './app.js', // specify the entry file's name as the key and the file's relative path as the value
   },
@@ -37,9 +44,10 @@ module.exports = {
   },
   plugins: [
     new HtmlWebpackPlugin({
-      filename: 'index.html',
-      template: path.join(__dirname, 'src/template.html'),
+      filename: 'index.html', // name of file to generate
+      template: path.join(__dirname, 'src/template.html'), // name and directory of tempalte file
     }),
+    // generate styles.css file in the same directory that the index.html file is placed, and add <link> tag inside HTML file
     new ExtractTextPlugin('styles.css'),
   ],
 };
