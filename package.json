@@ -10,7 +10,7 @@
   },
   "sass": {},
   "scripts": {
-    "start": "webpack-dev-server"
+    "start": "webpack-dev-server --open"
   },
   "author": "me",
   "license": "ISC",
