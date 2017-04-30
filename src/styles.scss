@@ -3,9 +3,9 @@ body {
   background-color: #31343F;
 
   h1 {
-    color: #A5EDA3;
     text-align: center;
     text-transform: uppercase;
+    animation: color-change-rev 8s infinite alternate;
   }
 
   ul {
@@ -15,18 +15,44 @@ body {
     width: 100px;
     margin: 0 auto;
     text-align: center;
-    transition: 600ms;
-    &:hover {
-      cursor: pointer;
-    }
+    animation: color-change 8s infinite alternate;
 
     li {
-      color: #E2B848;
+      width: 100%;
       padding: 5px 0;
+      animation: color-change-rev 8s infinite alternate;
+      transition: 300ms;
+
+      &:hover {
+        transform: scale(1.4);
+        cursor: wait;
+      }
     }
   }
 }
 
 .color-border {
   border-color: #79D5EA;
+}
+
+@keyframes color-change {
+    0% { border-color: #B86C69; color: #B86C69; }
+   15% { border-color: #e4ac21; color: #e4ac21; }
+   30% { border-color: #ece80e; color: #ece80e; }
+   45% { border-color: #88dd27; color: #88dd27; }
+   60% { border-color: #31cbee; color: #31cbee; }
+   75% { border-color: #1b0ff5; color: #1b0ff5; }
+   90% { border-color: #a82cdd; color: #a82cdd; }
+  100% { border-color: #930b7f; color: #930b7f; }
+}
+
+@keyframes color-change-rev {
+    0% { border-color: #930b7f; color: #930b7f; }
+   15% { border-color: #a82cdd; color: #a82cdd; }
+   30% { border-color: #1b0ff5; color: #1b0ff5; }
+   45% { border-color: #31cbee; color: #31cbee; }
+   60% { border-color: #88dd27; color: #88dd27; }
+   75% { border-color: #ece80e; color: #ece80e; }
+   90% { border-color: #e4ac21; color: #e4ac21; }
+  100% { border-color: #B86C69; color: #B86C69; }
 }
